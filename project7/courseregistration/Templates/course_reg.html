@@ -1,0 +1,21 @@
+<html>
+<body>
+    <h1> Students List</h1>
+    <table border="1">
+    <tr> <th>Name</th> <th>USN</th> </tr>
+    {% for student in student_list %}
+    <tr><td>{{student.name}}</td> <td>{{student.usn}}</td></tr>
+    {% endfor %}
+    </table>
+    <h1> Courses List</h1>
+    <table border="1">
+    <tr> <th>Name</th> <th>CODE</th> <th>ENROLMENT</th> </tr>
+    {% for course in course_list %}
+    <tr>
+    <td>{{course.name}}</td>
+    <td>{{course.code}}</td>
+    <td>{{ course.enrolment.all }}</td></tr>
+    {% endfor %}
+    </table>
+</body>
+<html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details Page</title>
+
+</head>
+
+<body>
+
+<h1> Project Details </h1>
+
+<form action="." method="post">
+
+{% csrf_token %}
+
+<table>
+
+    {{form.as_table}}
+
+</table>
+
+<p><input type="submit" value="Submit"></p>
+
+</form>
+
+{% if projects %}
+
+<hr>
+
+<table border="1">
+
+<tr>
+
+<th> Project Topic</th> <th>Language Used</th> <th>Duration</th>
+
+</tr>
+
+{% for project in projects %}
+
+<tr>
+
+<td>{{project.topic}}</td>
+
+<td>{{project.language}}</td>
+
+<td>{{project.duration}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endif %}
+
+</body>
+
+</html>
